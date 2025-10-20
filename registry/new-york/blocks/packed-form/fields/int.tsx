@@ -22,7 +22,7 @@ export interface IntFieldDefinition extends BaseFieldDefinition {
 
 export class IntField extends BaseField<IntFieldDefinition> {
   getValidator() {
-    let validator = z.number().int();
+    let validator = z.coerce.number().int();
 
     const { options, optional } = this.definition;
 

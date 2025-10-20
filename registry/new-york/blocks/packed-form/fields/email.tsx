@@ -22,7 +22,7 @@ export interface EmailFieldDefinition extends BaseFieldDefinition {
 
 export class EmailField extends BaseField<EmailFieldDefinition> {
   getValidator() {
-    let validator = z.email();
+    let validator = z.string().email();
 
     const { options, optional } = this.definition;
 
