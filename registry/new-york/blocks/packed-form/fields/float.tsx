@@ -22,7 +22,7 @@ export interface FloatFieldDefinition extends BaseFieldDefinition {
 
 export class FloatField extends BaseField<FloatFieldDefinition> {
   getValidator() {
-    let validator = z.number();
+    let validator = z.coerce.number();
 
     const { options, optional } = this.definition;
 
