@@ -4,6 +4,7 @@ import { Button } from "./button";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
+  resetUrl?: string;
 }
 
 interface ErrorBoundaryState {
@@ -44,6 +45,16 @@ export class ErrorBoundary extends React.Component<
       errorInfo: null,
     });
     window.location.reload();
+  };
+
+  handleGoBack = (): void => {
+    const { resetUrl = "/" } = this.props;
+    this.setState({
+      hasError: false,
+      error: null,
+      errorInfo: null,
+    });
+    window.location.href = resetUrl;
   };
 
   render(): React.ReactNode {
@@ -90,8 +101,11 @@ export class ErrorBoundary extends React.Component<
                 </div>
               )}
 
-              <div className="pt-4">
-                <Button onClick={this.handleReload} variant="default">
+              <div className="pt-4 flex gap-2">
+                <Button onClick={this.handleGoBack} variant="default">
+                  Go to Home
+                </Button>
+                <Button onClick={this.handleReload} variant="outline">
                   Reload Application
                 </Button>
               </div>
