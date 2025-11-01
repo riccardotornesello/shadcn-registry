@@ -4,6 +4,22 @@
   "homepage": "https://riccardotornesello.it",
   "items": [
     {
+      "name": "error-boundary",
+      "type": "registry:ui",
+      "title": "Error Boundary",
+      "description": "A React error boundary component for catching and displaying errors with detailed stack traces",
+      "registryDependencies": [
+        "button",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/ui/error-boundary.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "compact-form",
       "type": "registry:component",
       "title": "Compact Form",
